@@ -1,0 +1,11 @@
+{
+    "help_info": "command一覧表示",
+    "command": "サーバーにコマンドを送る",
+    "start": "サーバーが開始されます(.envにfolder_pachを設定する必要があります)",
+    "stop": "サーバーを停止",
+    "server_ip": "サーバーに接続するためのipとポートを表示",
+    "update": "サーバをアップデート",
+    "ini": "iniのアップロード",
+    "active_channel": "アクティブチャンネルの設定",
+    "help_list": "a"
+}

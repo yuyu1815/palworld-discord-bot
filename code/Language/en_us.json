@@ -1,0 +1,11 @@
+{
+    "help_info": "list commands",
+    "command": "Send command to server",
+    "start": "Server will start(folder_pach must be set in .env)",
+    "stop": "server is stopped",
+    "server_ip": "Show ip and port to connect to server",
+    "update": "Update Server",
+    "ini": "ini upload",
+    "active_channel": "Active Channel Settings",
+    "help_list": "a"
+}
