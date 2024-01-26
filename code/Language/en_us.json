@@ -7,5 +7,9 @@
     "update": "Update Server",
     "ini": "ini upload",
     "active_channel": "Active Channel Settings",
+    "log_01": "Server Start",
+    "Error_log_01": "command is not responding",
+    "Error_log_02": "Path (folder_pach) is not set in .env",
+    "Error_log_03": "Wrong os settings!",
     "help_list": "a"
 }

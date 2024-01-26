@@ -7,5 +7,9 @@
     "update": "サーバをアップデート",
     "ini": "iniのアップロード",
     "active_channel": "アクティブチャンネルの設定",
+    "log_01": "Server Start",
+    "Error_log_01": "commandが応答ありません",
+    "Error_log_02": ".envにパス(folder_pach)が設定されていません",
+    "Error_log_03": "osの設定が間違えています",
     "help_list": "a"
 }
