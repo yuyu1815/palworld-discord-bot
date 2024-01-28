@@ -17,6 +17,8 @@ MCRcon_time_out=os.getenv('MCRcon_time_out')
 server_error_log01 = os.getenv('server_error_log01')
 server_error_log02 = os.getenv('server_error_log02')
 system_os=os.getenv('system_os')
+
+
 #コマンド用
 def calc(cm):
     try:
@@ -60,6 +62,9 @@ def player_status():
     # 出力を行ごとに分割
     players_lines = output.split('\n')
 
+    # 各プレイヤー情報を格納するためのリストを初期化
+    players_list = []
+
     # 各プレイヤー情報を処理
     for player in players_lines:
         # 空行をスキップ
@@ -69,8 +74,10 @@ def player_status():
         # プレイヤーの情報をカンマで分割
         try:
             name, playeruid, steamid = player.split(',')
-            # 整形して出力
-            #print(f"name: {name}, playeruid: {playeruid}, steamid: {steamid}")
+            # nameとplayeruidをタプルにしてリストに追加
+            players_list.append((name, playeruid))
         except ValueError as e:
-            # 分割エラーをキャッチ（例：行が3つの要素に分割できない場合）
-            print(f"Error processing line: {player}. Error: {e}")
+            print(f"行の処理中にエラーが発生しました: {player}. エラー: {e}")
+
+    # 整形したリストを出力
+    return players_list

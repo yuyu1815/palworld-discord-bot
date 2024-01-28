@@ -46,8 +46,33 @@ def discord_command():
         subprocess.run('py discord_bot.py', shell=True)
     else:
         print(data["Error_log_03"])
+
 def gammelogin():
     print("テスト用")
+
+def check_login_changes(new_logins):
+    # ログイン情報をプレイヤーIDをキーとした辞書に変換する
+    current_login_dict = {user['playeruid']: user['name'] for user in current_logins}
+    new_login_dict = {user['playeruid']: user['name'] for user in new_logins}
+
+    # 新しく追加されたユーザーを検出
+    added_users = new_login_dict.keys() - current_login_dict.keys()
+    # 退出したユーザーを検出
+    removed_users = current_login_dict.keys() - new_login_dict.keys()
+    
+    # 新しく追加されたユーザーを表示
+    for user_id in added_users:
+        user_name = new_login_dict[user_id]
+        user_return_data=f"{user_name}{data['join_the_ganme']}"
+        print(user_return_data)
+
+
+    # 退出したユーザーを表示
+    for user_id in removed_users:
+        user_name = current_login_dict[user_id]
+        user_return_data=f"{user_name}{data['join_the_ganme']}"
+        print(user_return_data)
+    return user_return_data
 if __name__ == "__main__":
     #discord
     server_status_update=threading.Thread(target=discord_command)

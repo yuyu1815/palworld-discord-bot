@@ -92,8 +92,9 @@ async def send_message_(interaction):
     if not check_game_server and MCRcon_command.check():
         check_game_server=False
         await active_channel_id.send(data["stop_message"],ephemeral=True)
-    if main.gammelogin():
-        
+    player_list = MCR_command.player_status()
+    for player_id in [player[1] for player in player_list]:
+        player_id
 
 
 #channel設定

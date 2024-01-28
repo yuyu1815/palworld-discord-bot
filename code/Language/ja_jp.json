@@ -10,6 +10,8 @@
     "update_log02": "update完了",
     "ini": "iniのアップロード",
     "active_channel": "アクティブチャンネルの設定",
+    "join_the_ganme": "が入室しました",
+    "left_the_game": "が退出しました",
     "log_01": "Server Start",
     "log_02": "専用のコマンドを使用してください",
     "Error_log_01": "commandが応答ありません",
