@@ -18,5 +18,6 @@
     "server_error_log01": "サーバーオフライン",
     "server_error_log02": "サーバー停止に失敗",
     "server_error_log03": "アップデートするにはサーバー停止してください",
+    "server_error_log04": "steamcmdに接続できません",
     "help_list": "a"
 }

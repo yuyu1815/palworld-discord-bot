@@ -18,5 +18,6 @@
     "server_error_log01": "server is offline",
     "server_error_log02": "Failed to stop server",
     "server_error_log03": "Please stop the server to update",
+    "server_error_log04": "Unable to connect to steamcmd",
     "help_list": "a"
 }

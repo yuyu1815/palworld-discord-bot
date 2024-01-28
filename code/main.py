@@ -5,7 +5,6 @@ import time
 import subprocess
 import json
 
-import discord_bot
 import MCRcon_command
 
 load_dotenv()
@@ -20,28 +19,37 @@ server_status=False
 
 with open(f"./Language/{Language}", 'r', encoding='utf-8') as file:
     data = json.load(file)
-
+#生きているかチェック
 def sab_chec():
-    for server_status in True:
         server_status = MCRcon_command.check()
         time.sleep(status_time)
-    
+#startcommand   
 def server_start():
-    if system_os is "Linux":
-        subprocess.run([f'{folder_pach}/PalServer.sh', f'port={port}','-useperfthreads','-NoAsyncLoadingThread','-UseMultithreadForDS'])
-    elif system_os is "Windows":
-        subprocess.run([f'{folder_pach}/PalServer.exe', f'port={port}','-useperfthreads','-NoAsyncLoadingThread','-UseMultithreadForDS'])
+    if folder_pach:
+        if system_os == "Linux":
+            subprocess.run(f'{folder_pach}/PalServer.sh', f'port={port}','-useperfthreads','-NoAsyncLoadingThread','-UseMultithreadForDS', shell=True)
+        elif system_os == "Windows":
+            subprocess.run(f'{folder_pach}/PalServer.exe', f'port={port}','-useperfthreads','-NoAsyncLoadingThread','-UseMultithreadForDS', shell=True)
+        else:
+            print(data["Error_log_03"])
     else:
-        print(data["Error_log_03"])
+        print(data["Error_log_02"])
 #リスタート
 def server_restart():
     log=MCRcon_command.calc("Shutdown")
     server_start()
 
+def discord_command():
+    if system_os == "Linux":
+        subprocess.run('python3 discord_bot.py', shell=True)
+    elif system_os == "Windows":
+        subprocess.run('py discord_bot.py', shell=True)
+    else:
+        print(data["Error_log_03"])
+def gammelogin():
+    print("テスト用")
 if __name__ == "__main__":
     #discord
-    if discord_is_use is True:
-        threading.Thread(target=discord_bot.discord_main)
-        if server_status is True:
-            threading.Thread(target=sab_chec)
-            
+    server_status_update=threading.Thread(target=discord_command)
+    server_status_update.start()
+    print("sab")
