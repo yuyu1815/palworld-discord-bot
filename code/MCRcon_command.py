@@ -12,8 +12,8 @@ server_pass = os.getenv('server_pass')
 #port
 server_port = int(os.getenv('server_port'))
 #time out
-MCRcon_time_out=os.getenv('MCRcon_time_out')
-
+MCRcon_time_out = os.getenv('MCRcon_time_out')
+steam_api = os.getenv('steam_api')
 server_error_log01 = os.getenv('server_error_log01')
 server_error_log02 = os.getenv('server_error_log02')
 system_os=os.getenv('system_os')
@@ -80,4 +80,7 @@ def player_status():
             print(f"行の処理中にエラーが発生しました: {player}. エラー: {e}")
 
     # 整形したリストを出力
-    return players_list
+    if steam_api is False:      
+        return players_list
+    else:
+        return steamid

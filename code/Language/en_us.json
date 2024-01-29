@@ -10,6 +10,8 @@
     "update_log02": "update completed",
     "ini": "ini upload",
     "active_channel": "Active Channel Settings",
+    "join_the_ganme": "join the game",
+    "left_the_game": "left the game",
     "log_01": "Server Start",
     "log_02": "Use the dedicated command",
     "Error_log_01": "command is not responding",
@@ -19,5 +21,6 @@
     "server_error_log02": "Failed to stop server",
     "server_error_log03": "Please stop the server to update",
     "server_error_log04": "Unable to connect to steamcmd",
+    "server_error_log05": "Environment variable 'steam_api_key' is not set",
     "help_list": "a"
 }

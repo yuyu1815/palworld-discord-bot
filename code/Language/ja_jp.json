@@ -21,5 +21,6 @@
     "server_error_log02": "サーバー停止に失敗",
     "server_error_log03": "アップデートするにはサーバー停止してください",
     "server_error_log04": "steamcmdに接続できません",
+    "server_error_log05": "環境変数 'steam_api_key' が設定されていません",
     "help_list": "a"
 }
