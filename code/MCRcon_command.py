@@ -13,6 +13,7 @@ server_pass = os.getenv('server_pass')
 server_port = int(os.getenv('server_port'))
 #time out
 MCRcon_time_out = os.getenv('MCRcon_time_out')
+
 steam_api = os.getenv('steam_api')
 server_error_log01 = os.getenv('server_error_log01')
 server_error_log02 = os.getenv('server_error_log02')
@@ -64,23 +65,26 @@ def player_status():
 
     # 各プレイヤー情報を格納するためのリストを初期化
     players_list = []
-
+    steamid_list = []
     # 各プレイヤー情報を処理
     for player in players_lines:
         # 空行をスキップ
         if player.strip() == "":
             continue
-
+        if 'name' in player.lower() and 'playeruid' in player.lower():
+            continue
         # プレイヤーの情報をカンマで分割
         try:
             name, playeruid, steamid = player.split(',')
             # nameとplayeruidをタプルにしてリストに追加
+            print("name,{name} playeruid,{playeruid}")
             players_list.append((name, playeruid))
+            steamid_list.append(steamid)
         except ValueError as e:
             print(f"行の処理中にエラーが発生しました: {player}. エラー: {e}")
-
+    print(f"steam:{steamid_list} players_list:{players_list}" )
     # 整形したリストを出力
-    if steam_api is False:      
+    if steam_api:      
         return players_list
     else:
-        return steamid
+        return steamid_list

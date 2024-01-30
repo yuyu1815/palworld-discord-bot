@@ -4,6 +4,7 @@ import time
 import subprocess
 import json
 import threading
+import time
 
 import MCRcon_command
 
@@ -27,16 +28,19 @@ def sab_chec():
 def server_start():
     if folder_pach:
         if system_os == "Linux":
-            subprocess.run(f'{folder_pach}/PalServer.sh', f'port={port}','-useperfthreads','-NoAsyncLoadingThread','-UseMultithreadForDS', shell=True)
+            print("Linux")
+            subprocess.run(f'{folder_pach}/PalServer.sh port={port} -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS', shell=True)
         elif system_os == "Windows":
-            subprocess.run(f'{folder_pach}/PalServer.exe', f'port={port}','-useperfthreads','-NoAsyncLoadingThread','-UseMultithreadForDS', shell=True)
+            print("Windows")
+            subprocess.run(f'{folder_pach}/PalServer.exe port={port} -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS', shell=True)
         else:
             print(data["Error_log_03"])
     else:
         print(data["Error_log_02"])
 #リスタート
 def server_restart():
-    log=MCRcon_command.calc("Shutdown")
+    MCRcon_command.calc("Shutdown")
+    time.sleep(3)
     server_start()
 
 def discord_command():
@@ -49,9 +53,11 @@ def discord_command():
 
 def gammelogin():
     print("テスト用")
-
+    
 if __name__ == "__main__":
     #discord
-    server_status_update=threading.Thread(target=discord_command)
-    server_status_update.start()
+    server_discord=threading.Thread(target=discord_command)
+    server_discord.start()
     print("sab")
+    server_status_update=threading.Thread(target=gammelogin)
+    server_status_update.start()

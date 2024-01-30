@@ -1,2 +1,2 @@
 @echo off
-python discord_bot.py
+python main.py

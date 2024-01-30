@@ -1,0 +1,4 @@
+python-steam-api
+discord.py
+python-dotenv
+mcrcon
