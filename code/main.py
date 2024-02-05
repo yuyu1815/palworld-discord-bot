@@ -51,13 +51,17 @@ def discord_command():
     else:
         print(data["Error_log_03"])
 
-def gammelogin():
-    print("テスト用")
+def is_list(var):
+    return isinstance(var, list)
+
+# 変数が複数のリスト（配列）を含むかどうかをチェックする関数
+def contains_multiple_lists(var):
+    if is_list(var) and all(is_list(elem) for elem in var):
+        return True
+    return False
     
 if __name__ == "__main__":
     #discord
     server_discord=threading.Thread(target=discord_command)
     server_discord.start()
-    print("sab")
-    server_status_update=threading.Thread(target=gammelogin)
-    server_status_update.start()
+    print("Ok")

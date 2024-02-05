@@ -50,41 +50,51 @@ def player_status():
             shell=True,
             capture_output=True
         )
-    elif system_os == "Windous":
+        output = players_data.stdout.decode()
+    elif system_os == "Windows":
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        rcon_path = os.path.join(script_dir, './rcon/rcon.exe')
+
         players_data = subprocess.run(
-            f'./rcon/rcon.exe -a {server_address}:{server_port} -p {server_pass} -T {MCRcon_time_out}s ShowPlayers',
+            f'{rcon_path} -a {server_address}:{server_port} -p {server_pass} -T {MCRcon_time_out}s ShowPlayers',
             shell=True,
             capture_output=True
         )
+        output = players_data.stderr.decode('cp932')
 
-    # コマンドの出力をデコードして文字列として取得
-    output = players_data.stdout.decode()
-
+    
     # 出力を行ごとに分割
     players_lines = output.split('\n')
-
     # 各プレイヤー情報を格納するためのリストを初期化
     players_list = []
+    playeruid_list = []
     steamid_list = []
     # 各プレイヤー情報を処理
     for player in players_lines:
         # 空行をスキップ
         if player.strip() == "":
             continue
-        if 'name' in player.lower() and 'playeruid' in player.lower():
-            continue
+        #if 'name' in player.lower() and 'playeruid' in player.lower():
+        #    continue
         # プレイヤーの情報をカンマで分割
         try:
             name, playeruid, steamid = player.split(',')
             # nameとplayeruidをタプルにしてリストに追加
-            print("name,{name} playeruid,{playeruid}")
+            #print(f"name,{name} playeruid,{playeruid}")
             players_list.append((name, playeruid))
-            steamid_list.append(steamid)
+            #playeruid_list.append(playeruid)
+            steamid_list.append((steamid,playeruid))
         except ValueError as e:
-            print(f"行の処理中にエラーが発生しました: {player}. エラー: {e}")
-    print(f"steam:{steamid_list} players_list:{players_list}" )
+            print(f"player: {player}. Error: {e}")
+    
     # 整形したリストを出力
-    if steam_api:      
-        return players_list
+    if steam_api:
+        if players_list:
+            #print(f"players_list :{players_list}")  
+            return players_list
+        else:
+            #print(f"players_list :{players_list}")  
+            return [("noname","1")]
     else:
+        #print(f"steamid_list :{steamid_list}")  
         return steamid_list

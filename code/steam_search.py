@@ -31,9 +31,4 @@ def steam_id_name(steam_id):
     return {"player": user_details["players"][0]}
 
 
-def find_name_by_id(id_to_find, pairs_list):
-    print(f"id_to_find:{id_to_find} pairs_list{pairs_list}")
-    for name,id in pairs_list:
-        if id == id_to_find:
-            return name
         
