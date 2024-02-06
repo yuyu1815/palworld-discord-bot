@@ -1,1 +1,1 @@
-rcon.exe -a 119.228.195.76:32235 -p adminkokoa -T 1s ShowPlayers
+
