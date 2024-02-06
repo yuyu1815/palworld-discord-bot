@@ -38,7 +38,7 @@ pip install -r ./code/requirements.txt
 ```
 #サーバーのアドレス
 server_address=
-#サーバーのMCrconのport
+#サーバーのCRconのport
 server_pass = 
 #サーバーport
 port =
@@ -101,3 +101,4 @@ folder_pach=
 ```
 /update
 ```
+### 機能

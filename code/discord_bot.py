@@ -193,7 +193,7 @@ async def update_command(interaction: discord.Interaction):
     else:
         await interaction.response.send_message(embed=discord.Embed(description=data["log_07"], color=discord.Color.red()),ephemeral=True)
 
-@tasks.loop(seconds=5)
+@tasks.loop(seconds=3)
 async def loop():
     global active_channel, old_players_list
     try:
@@ -224,7 +224,8 @@ async def loop():
                             server_login_message = f'{steam_name}{data["server_join_the_game"]}'
                         print(login_message)
                         MCRcon_command.calc(f'Broadcast {server_login_message}')
-                        await active_channel.send(description=discord.Embed(description=f"{login_message}"), color=discord.Color.blue())
+                        embed = discord.Embed(description=f"{login_message}", color=discord.Color.blue())
+                        await active_channel.send(embed=embed)
                 # 退出したプレイヤーに関して処理を行う
             for name, playeruid in players_who_left:
                 if name :
@@ -238,12 +239,12 @@ async def loop():
                             server_logout_message = f'{steam_name}{data["server_left_the_game"]}'
 
                         print(logout_message)
-                        MCRcon_command.calc(f'Broadcast {server_logout_message}')
-                        await active_channel.send(description=discord.Embed(description=f"{logout_message}"), color=discord.Color.orange())
+                        embed = discord.Embed(description=f"{logout_message}", color=discord.Color.orange())
+                        await active_channel.send(embed=embed)
             old_players_list = new_players_list
 
         elif check_game_server:
             check_game_server=False
-            await active_channel.send(description=discord.Embed(description=f"{data['stop_message']}"), color=discord.Color.red())
+            await active_channel.send(embed=discord.Embed(description=f"{data['stop_message']}"), color=discord.Color.red())
 
 client.run(token)
