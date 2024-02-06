@@ -29,6 +29,10 @@
 ```
 pip install -r ./code/requirements.txt
 ```
+<details>
+<summary> <big> How to create a dscord bot </big></summary>
+</details>
+
 ### Setup items
 #### English
 ```en_example.env```
