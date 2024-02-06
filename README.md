@@ -24,7 +24,8 @@
 ### update
 ------------------------
 2024 2/6 v0.1　Only the base is implemented.
-### ⚠️Currently this discordbot does not work on Windows ⚠️
+2024 2/7 v0.1.1 Support for Windows
+------------------------
 ## How to Install
 ```
 pip install -r ./code/requirements.txt
