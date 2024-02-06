@@ -31,6 +31,20 @@ pip install -r ./code/requirements.txt
 ```
 <details>
 <summary> <big> How to create a dscord bot </big></summary>
+
+### 1. First, please open [discord developer portal](https://discord.com/developers/applications)
+### 2. Click "New Application" in the yellow line.
+![banner](./image/discord_make01.png)
+### 3. Click "Bot" in the yellow line.
+### Click Reset Token on the red line.
+![banner](./image/discord_make02.png)
+### 5. Click "copy" on the yellow line to copy the discord Token.
+### Stick it to the "token=" field in the settings section below.
+![banner](./image/discord_make03.png)
+### Scroll down to the bottom and click on the three yellow lines to turn it on, then press "save".
+![banner](./image/discord_make04.png)
+### 7. Click the following checkboxes and press "copy" below to create the invitation URL.
+![banner](./image/discord_make05.png)
 </details>
 
 ### Setup items
@@ -54,6 +68,8 @@ token=
 #Example: folder_pach="~/Steam/steamapps/common/PalServer"
 folder_pach=
 ```
+#### When you are done editing, edit the name to the following
+```.env```
 ### Activation Method
 #### Linux
 ```

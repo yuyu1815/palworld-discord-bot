@@ -32,18 +32,18 @@ pip install -r ./code/requirements.txt
 <details>
 <summary> <big> dscord botの作成方法 </big></summary>
 
-### 1. First, please open [discord developer portal](https://discord.com/developers/applications)
-### 2. Click "New Application" in the yellow line.
+### 1.まずは、[discord開発者ポータル](https://discord.com/developers/applications)を開いてください
+### 2.黄色い線の部分のNew Applicationをクリック
 ![banner](./image/discord_make01.png)
-### 3. Click "Bot" in the yellow line.
-### Click Reset Token on the red line.
+### 3.黄色い線の部分のBotをクリック
+### 4.赤い線の部分のReset Tokenをクリック
 ![banner](./image/discord_make02.png)
-### 5. Click "copy" on the yellow line to copy the discord Token.
-### Stick it to the "token=" field in the settings section below.
+### 5.黄色い線の部分のcopyををクリックしてdiscord Tokenをコピー
+### 下の設定項目のtoken=に張り付けます
 ![banner](./image/discord_make03.png)
-### Scroll down to the bottom and click on the three yellow lines to turn it on, then press "save".
+### 6.下にスクロールして3つの黄色い線の部分のをクリックしONにし、saveを押します
 ![banner](./image/discord_make04.png)
-### 7. Click the following checkboxes and press "copy" below to create the invitation URL.
+### 7.以下のチェック項目を押して下のcopyを押すと招待URLが作成さてます
 ![banner](./image/discord_make05.png)
 
 </details>
