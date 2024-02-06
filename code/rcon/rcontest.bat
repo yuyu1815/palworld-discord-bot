@@ -1,1 +1,0 @@
-rcon.exe -a 192.168.3.5:32235 -p adminkokoa -T 1s ShowPlayers
