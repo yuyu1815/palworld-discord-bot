@@ -30,7 +30,7 @@
 pip install -r ./code/requirements.txt
 ```
 <details>
-<summary> <big> dscord botの作成方法 </big></summary>
+<summary> <big> discord botの作成方法 </big></summary>
 
 ### 1.まずは、[discord開発者ポータル](https://discord.com/developers/applications)を開いてください
 ### 2.黄色い線の部分のNew Applicationをクリック

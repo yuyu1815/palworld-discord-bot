@@ -30,7 +30,7 @@
 pip install -r ./code/requirements.txt
 ```
 <details>
-<summary> <big> How to create a dscord bot </big></summary>
+<summary> <big> How to create a discord bot </big></summary>
 
 ### 1. First, please open [discord developer portal](https://discord.com/developers/applications)
 ### 2. Click "New Application" in the yellow line.
