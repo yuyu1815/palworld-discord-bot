@@ -24,7 +24,7 @@
 ### update
 ------------------------
 2024 2/6 v0.1　ベースのみ実装
-### ⚠️現在このdiscordbotはWindowsでは動作しません⚠️
+2024 2/7 v0.1.1　Windowsに対応
 ## インストール方法
 ```
 pip install -r ./code/requirements.txt
