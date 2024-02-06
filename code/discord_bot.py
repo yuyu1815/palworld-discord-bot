@@ -239,6 +239,7 @@ async def loop():
                             server_logout_message = f'{steam_name}{data["server_left_the_game"]}'
 
                         print(logout_message)
+                        MCRcon_command.calc(f'Broadcast {server_logout_message}')
                         embed = discord.Embed(description=f"{logout_message}", color=discord.Color.orange())
                         await active_channel.send(embed=embed)
             old_players_list = new_players_list

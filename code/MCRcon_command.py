@@ -22,14 +22,28 @@ system_os=os.getenv('system_os')
 
 #コマンド用
 def calc(cm):
-    try:
+    if system_os == "Linux":
         with MCRcon(server_address, server_pass, server_port) as mcr:
-            log=mcr.command(cm)
-            return log
-    except Exception as e:
-        print(server_error_log01)
-        return False
-
+            try:
+                log=mcr.command(cm)
+                return log
+            except Exception as e:
+                print(server_error_log01)
+                return False
+    elif system_os == "Windows":
+        script_dir = os.getcwd()
+        rcon_path=f'{script_dir}/rcon/rcon.exe'
+        try:
+            players_data = subprocess.run(
+                f'{rcon_path} -a {server_address}:{server_port} -p {server_pass} "{cm}"',
+                shell=True,
+                capture_output=True
+            )
+            output = players_data.stdout.decode()
+            return output
+        except Exception as e:
+            print(server_error_log01)
+            return False
 #タイムアウトチェック
 def check():
     try:
@@ -52,15 +66,15 @@ def player_status():
         )
         output = players_data.stdout.decode()
     elif system_os == "Windows":
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        rcon_path = os.path.join(script_dir, './rcon/rcon.exe')
-
+        script_dir = os.getcwd()
+        rcon_path=f'{script_dir}/rcon/rcon.exe'
+        print(script_dir)
         players_data = subprocess.run(
             f'{rcon_path} -a {server_address}:{server_port} -p {server_pass} -T {MCRcon_time_out}s ShowPlayers',
             shell=True,
             capture_output=True
         )
-        output = players_data.stderr.decode('cp932')
+        output = players_data.stdout.decode()
 
     
     # 出力を行ごとに分割

@@ -45,9 +45,12 @@ def server_restart():
 
 def discord_command():
     if system_os == "Linux":
+        print("Linux")
         subprocess.run('python3 discord_bot.py', shell=True)
     elif system_os == "Windows":
-        subprocess.run('py discord_bot.py', shell=True)
+        script_dir = os.getcwd()
+        print("Windows")
+        subprocess.run(f'py {script_dir}/discord_bot.py', shell=True)
     else:
         print(data["Error_log_03"])
 
