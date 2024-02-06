@@ -23,7 +23,7 @@
 - [ ] web page   
 ### update
 ------------------------
-2024 2/6 v0.1　ベースのみ実装
+2024 2/6 v0.1　Only the base is implemented.
 ### ⚠️Currently this discordbot does not work on Windows ⚠️
 ## How to Install
 ```
@@ -34,13 +34,13 @@ pip install -r ./code/requirements.txt
 ```en_example.env```
 #### 日本語
 ```ja_example.env```
-#### 以下を編集してください
+#### Please edit the following
 ```
 #Server Address
 server_address=
 #Server's MCrcon port
 server_pass = 
-#サーバーport
+#server port
 port =
 #Administrator's discord id
 discord_id =
@@ -101,3 +101,11 @@ folder_pach=
 ```
 /update
 ```
+## Main Features
+### Entering and exiting servers
+![image](./image/login.png)
+![image](./image/server_login.png)
+### Secure command submission
+![image](./image/command.png)
+### Start server !
+![image](./image/start_command%20%20.png)

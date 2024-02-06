@@ -101,4 +101,11 @@ folder_pach=
 ```
 /update
 ```
-### 機能
+## 主な機能
+### サーバーの入退出
+![image](./image/login.png)
+![image](./image/server_login.png)
+### 安全なcommandの送信
+![image](./image/command.png)
+### サーバーの開始
+![image](./image/start_command%20%20.png)
