@@ -25,6 +25,7 @@
 ------------------------
 #### 2024 2/6 v0.1　ベースのみ実装
 #### 2024 2/7 v0.1.1　Windowsに対応
+#### 2024 2/9 v0.2　いくつかのバグの修正 updateコマンドの追加
 ------------------------
 ## インストール方法
 ```
@@ -119,7 +120,7 @@ folder_pach=
 ```
 /command command:
 ```
-#### まだ動きません
+#### サーバーのアップデート(steamcmd)
 ```
 /update
 ```
@@ -131,3 +132,5 @@ folder_pach=
 ![image](./image/command.png)
 ### サーバーの開始
 ![image](./image/start_command%20%20.png)
+### サーバーのアップデート(steamcmd)
+![image](./image/update_command.png)

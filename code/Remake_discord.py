@@ -52,7 +52,7 @@ with open(f"{win_linu_folder_pach}/channel_id.json", 'r', encoding='utf-8') as f
 
 async def command_discord_say(interaction,description,color,ephemeral):
     await interaction.response.send_message(embed=discord.Embed(description=description, color=color),ephemeral=ephemeral)
-
+    return
 async def admin_roll(interaction):
     if not (discord.utils.get(interaction.guild.roles, id=int(active_channel_json['roleid'] or "0")) in interaction.user.roles or interaction.user.id == int(os.getenv('discord_id') or "0") or interaction.user.guild_permissions.administrator):
         await command_discord_say(interaction,data["log_07"],discord.Color.green(),True)
@@ -148,11 +148,13 @@ async def update_command(interaction: discord.Interaction):
     if await admin_roll(interaction):
         if not MCRcon_command.check():
             try:
+                await command_discord_say(interaction,data['update_log01'],discord.Color.green(),False)
                 if system_os == "Linux":
                     subprocess.run(f'/home/steam/.steam/steamcmd/steamcmd.sh +force_install_dir "{folder_pach}" +login anonymous +app_update 2394010 validate +quit')
                 elif system_os == "Windows":
                     subprocess.run(f'{os.getcwd()}/steamcmd/steamcmd.exe +force_install_dir "{folder_pach}" +login anonymous +app_update 2394010 validate +quit')
-                await command_discord_say(interaction,data['update_log02'],discord.Color.green(),True)
+                active_channel = client.get_channel(int(active_channel_id))
+                await active_channel.send(embed=discord.Embed(description=data['update_log02'], color=discord.Color.green()))
             except Exception as e:
                 await command_discord_say(interaction,data['server_error_log04'],discord.Color.red(),True)
         else:

@@ -64,11 +64,8 @@ def player_status():
         )
         output = players_data.stdout.decode()
     elif system_os == "Windows":
-        script_dir = os.getcwd()
-        rcon_path=f'{script_dir}/rcon/rcon.exe'
-        print(script_dir)
         players_data = subprocess.run(
-            f'{rcon_path} -a {server_address}:{server_port} -p {server_pass} -T {MCRcon_time_out}s ShowPlayers',
+            f'{os.getcwd()}/rcon/rcon.exe -a {server_address}:{server_port} -p {server_pass} -T {MCRcon_time_out}s ShowPlayers',
             shell=True,
             capture_output=True
         )

@@ -46,11 +46,11 @@ def server_restart():
 def discord_command():
     if system_os == "Linux":
         print("Linux")
-        subprocess.run('python3 discord_bot.py', shell=True)
+        subprocess.run('python3 Remake_discord.py', shell=True)
     elif system_os == "Windows":
         script_dir = os.getcwd()
         print("Windows")
-        subprocess.run(f'py {script_dir}/discord_bot.py', shell=True)
+        subprocess.run(f'py {script_dir}/Remake_discord.py', shell=True)
     else:
         print(data["Error_log_03"])
 

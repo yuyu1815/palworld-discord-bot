@@ -25,6 +25,7 @@
 ------------------------
 #### 2024 2/6 v0.1　Only the base is implemented.
 #### 2024 2/7 v0.1.1 Support for Windows
+#### 2024 2/9 v0.2 Fixed some bugs Added update command
 ------------------------
 ## How to Install
 ```
@@ -118,7 +119,7 @@ folder_pach=
 ```
 /command command:
 ```
-#### Still not working.
+#### server update(steamcmd)
 ```
 /update
 ```
@@ -130,3 +131,5 @@ folder_pach=
 ![image](./image/command.png)
 ### Start server !
 ![image](./image/start_command%20%20.png)
+### server update(steamcmd)
+![image](./image/update_command.png)
