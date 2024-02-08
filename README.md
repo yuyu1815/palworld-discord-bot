@@ -118,7 +118,7 @@ folder_pach=
 ```
 /command command:
 ```
-#### Still not working.
+#### game update
 ```
 /update
 ```
