@@ -31,11 +31,9 @@ def calc(cm):
                 print(server_error_log01)
                 return False
     elif system_os == "Windows":
-        script_dir = os.getcwd()
-        rcon_path=f'{script_dir}/rcon/rcon.exe'
         try:
             players_data = subprocess.run(
-                f'{rcon_path} -a {server_address}:{server_port} -p {server_pass} "{cm}"',
+                f'{os.getcwd()}/rcon/rcon.exe -a {server_address}:{server_port} -p {server_pass} "{cm}"',
                 shell=True,
                 capture_output=True
             )

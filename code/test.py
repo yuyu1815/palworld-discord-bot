@@ -23,6 +23,4 @@ def main():
     id=steam_search.find_name_by_id(single_player_id,id_to_find)
     print(id)
 
-
-
 main()
