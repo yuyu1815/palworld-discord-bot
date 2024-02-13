@@ -17,8 +17,8 @@
 - [ ] Implement the help command
 - [ ] Fixed garbled characters in non-English (waiting for official fix)
 - [ ] Show steam name when logging in (waiting for official fix)
-- [ ] update using steamcmd
-- [ ] Support for Windows version  
+- [x] update using steamcmd
+- [x] Support for Windows version  
 - [ ] Edit INI
 - [ ] web page   
 ### update
