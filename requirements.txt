@@ -2,3 +2,4 @@ discord.py==2.3.2
 mcrcon==0.7.0
 python-dotenv==1.0.1
 python_steam_api==1.2.2
+beautifulsoup4
