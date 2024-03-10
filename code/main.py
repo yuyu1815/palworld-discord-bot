@@ -67,4 +67,5 @@ if __name__ == "__main__":
     #discord
     server_discord=threading.Thread(target=discord_command)
     server_discord.start()
+    
     print("Ok")
